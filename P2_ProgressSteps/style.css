@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+/* Create custom properties
+It requires scope */
+:root{
+    --line-fill-empty:#e0e0e0;
+    --line-fill-full:#3498db;
+}
+
+*{
+    box-sizing:border-box;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    margin:0;
+    font-family: 'Muli', sans-serif;
+    background-color:white;
+    overflow:hidden;
+}
+.container{
+    text-align:center;
+}
+/* styles for steps */
+.progress-container{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    margin-bottom:20px;
+    max-width:100%;
+    width:350px;
+}
+/* gray color line */
+.progress-container::before{
+    content:'';
+    background-color:var(--line-fill-empty);
+    position:absolute;
+    top:50%;
+    left:0;
+    height:4px;
+    width:0%;
+    transform:translateY(-50%);
+    z-index:-1;
+}
+
+
+/* blue color line */
+.progress{
+    background-color:var(--line-fill-full);
+    position:absolute;
+    /* line position is exactly middle */
+    top:50%;
+    left:0;
+    height:4px;
+    width:0%;
+    transform:translateY(-50%);
+    z-index:-1;
+    transition: 0.4s ease;
+}
+
+.circle{
+    background-color:white;
+    color:gray;
+    border-radius:50%;
+    height:30px;
+    width:30px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border:2px solid var(--line-fill-empty);
+    transition:0.4sec ease;
+}
+.circle:active{
+    background-color:var(--line-fill-full);
+
+}
+.btn{
+    background-color:var(--line-fill-full);
+    padding:5px 30px;
+    margin:5px;
+    border-radius:6px;
+    color:white;
+    border:0;
+    font-size:14px;
+    cursor:pointer;
+    font-family:inherit;
+}
