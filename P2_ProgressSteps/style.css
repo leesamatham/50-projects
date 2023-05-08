@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 /* Create custom properties
 It requires scope */
-:root{
-    --line-fill-empty:#e0e0e0;
-    --line-fill-full:#3498db;
-}
-
 *{
     box-sizing:border-box;
 }
@@ -35,7 +30,7 @@ body{
 /* gray color line */
 .progress-container::before{
     content:'';
-    background-color:var(--line-fill-empty);
+    background-color:gray;
     position:absolute;
     top:50%;
     left:0;
@@ -48,7 +43,7 @@ body{
 
 /* blue color line */
 .progress{
-    background-color:var(--line-fill-full);
+    background-color:blue;
     position:absolute;
     /* line position is exactly middle */
     top:50%;
@@ -60,7 +55,7 @@ body{
     transition: 0.4s ease;
 }
 
-.circle{
+.circles{
     background-color:white;
     color:gray;
     border-radius:50%;
@@ -69,15 +64,15 @@ body{
     display:flex;
     align-items:center;
     justify-content: center;
-    border:2px solid var(--line-fill-empty);
+    border:2px solid gray;
     transition:0.4sec ease;
 }
-.circle:active{
-    background-color:var(--line-fill-full);
+.circles:active{
+    background-color:blue;
 
 }
 .btn{
-    background-color:var(--line-fill-full);
+    background-color:blue;
     padding:5px 30px;
     margin:5px;
     border-radius:6px;
@@ -86,4 +81,13 @@ body{
     font-size:14px;
     cursor:pointer;
     font-family:inherit;
+}
+.btn:active{
+    transform:scale(0.98);
+}
+.btn:focus{
+    outline:0;
+}
+.btn:disabled{
+    background-color: gray;
 }
